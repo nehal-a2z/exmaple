@@ -1,4 +1,5 @@
 import colorama
+from sound_manager import SoundManager
 
 colorama.init(autoreset=True)
 
@@ -25,6 +26,7 @@ def is_full(board):
 def play_tic_tac_toe():
     board = [[" " for _ in range(3)] for _ in range(3)]
     current_player = "X"
+    sound_manager = SoundManager(board) 
 
     while True:
         print_board(board)
@@ -42,6 +44,7 @@ def play_tic_tac_toe():
                 print("Invalid input. Please enter numbers.")
 
         board[row][col] = current_player
+        sound_manager.play_move_sound()
 
         if check_winner(board, current_player):
             print_board(board)
