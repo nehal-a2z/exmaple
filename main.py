@@ -1,12 +1,7 @@
-import colorama
-
-colorama.init(autoreset=True)
-
 def print_board(board):
     for row in board:
-        colored_row = [colorama.Fore.CYAN + cell + colorama.Fore.RESET if cell != " " else cell for cell in row]
-        print(" | ".join(colored_row))
-        print(colorama.Fore.YELLOW + "-" * 9 + colorama.Fore.RESET)
+        print(" | ".join(row))
+        print("-" * 9)
 
 def check_winner(board, player):
     # Check rows, columns, and diagonals
@@ -59,5 +54,5 @@ def play_tic_tac_toe():
         play_tic_tac_toe()
 
 if __name__ == "__main__":
-    print(colorama.Fore.GREEN + "Welcome to Tic-Tac-Toe!" + colorama.Fore.RESET)
+    print("Welcome to Tic-Tac-Toe!")
     play_tic_tac_toe()
