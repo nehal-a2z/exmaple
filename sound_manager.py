@@ -1,7 +1,7 @@
 from playsound import playsound
 import os
 
-class SoundManager:
+class SoundManagerX:
     def __init__(self, board):
         self.sound_dir = os.path.join(os.path.dirname(__file__), "sounds")
         self.move_sound = os.path.join(self.sound_dir, "move.mp3")
